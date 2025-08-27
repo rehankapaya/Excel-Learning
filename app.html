@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Mastery - Complete Excel Learning Resource</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #217346 0%, #25a56a 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(33, 115, 70, 0.9), rgba(37, 165, 106, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23217346"/><path d="M0 0L100 100" stroke="%2325a56a" stroke-width="2"/><path d="M100 0L0 100" stroke="%2325a56a" stroke-width="2"/></svg>');
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .topics-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #217346;
+            font-size: 2rem;
+        }
+        
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .topic-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background-color: #217346;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-body ul {
+            list-style: none;
+            margin-left: 10px;
+        }
+        
+        .card-body li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .card-body li i {
+            color: #217346;
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+        
+        .card-footer {
+            padding: 15px 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        
+        .card-footer a {
+            color: #217346;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .examples-section {
+            background-color: #eef5f1;
+            padding: 60px 0;
+        }
+        
+        .example {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .example h3 {
+            color: #217346;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .example-content {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .example-explanation {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .example-code {
+            flex: 1;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #217346;
+            min-width: 300px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .modal-header {
+            background-color: #217346;
+            color: white;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            margin: -30px -30px 20px -30px;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #25a56a;
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-file-excel"></i>
+                    <h1>Excel Mastery</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-functions"></i> Functions</a></li>
+                        <li><a href="#"><i class="fas fa-chart-bar"></i> Data Analysis</a></li>
+                        <li><a href="#"><i class="fas fa-table"></i> Formatting</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h2>Master Microsoft Excel From Beginner to Advanced</h2>
+            <p>Learn all essential Excel functions, formulas, data analysis techniques, and visualization tools with detailed explanations and practical examples.</p>
+            <a href="#" class="btn">Start Learning Now</a>
+        </div>
+    </section>
+    
+    <section class="topics-section">
+        <div class="container">
+            <h2 class="section-title">Excel Course Outline</h2>
+            <div class="topics-grid">
+                <div class="topic-card" onclick="openModal('introModal')">
+                    <div class="card-header">
+                        <h3>Introduction & Basics</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Introduction to MS Office and MS Excel</li>
+                            <li><i class="fas fa-check-circle"></i> Creating and formatting table</li>
+                            <li><i class="fas fa-check-circle"></i> Arithmetic Operations</li>
+                            <li><i class="fas fa-check-circle"></i> Boolean Operations</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Explore Section <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="topic-card" onclick="openModal('basicFunctionsModal')">
+                    <div class="card-header">
+                        <h3>Basic Functions</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> SUM, AVERAGE, MAX, MIN</li>
+                            <li><i class="fas fa-check-circle"></i> COUNT, COUNTA, COUNTBLANK</li>
+                            <li><i class="fas fa-check-circle"></i> LOWER, UPPER, PROPER</li>
+                            <li><i class="fas fa-check-circle"></i> IF, NESTED IF</li>
+                            <li><i class="fas fa-check-circle"></i> COUNTIF, SUMIF, AVERAGEIF</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Explore Section <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="topic-card" onclick="openModal('basicFunctions2Modal')">
+                    <div class="card-header">
+                        <h3>Basic Functions (Cont.)</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> CONCAT, TEXTJOIN</li>
+                            <li><i class="fas fa-check-circle"></i> LARGE, SMALL</li>
+                            <li><i class="fas fa-check-circle"></i> RAND, RANDBETWEEN</li>
+                            <li><i class="fas fa-check-circle"></i> AND, OR logical functions</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Explore Section <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="topic-card" onclick="openModal('advancedFunctionsModal')">
+                    <div class="card-header">
+                        <h3>Advanced Functions</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> VLOOKUP and HLOOKUP</li>
+                            <li><i class="fas fa-check-circle"></i> INDEX, MATCH</li>
+                            <li><i class="fas fa-check-circle"></i> FORECAST, FUTURE VALUE</li>
+                            <li><i class="fas fa-check-circle"></i> COUNTIFS, SUMIFS</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Explore Section <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="topic-card" onclick="openModal('advancedFunctions2Modal')">
+                    <div class="card-header">
+                        <h3>Advanced Functions (Cont.)</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> IFS function</li>
+                            <li><i class="fas fa-check-circle"></i> MAXIFS, MINIFS</li>
+                            <li><i class="fas fa-check-circle"></i> IFERROR</li>
+                            <li><i class="fas fa-check-circle"></i> SUMPRODUCT</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Explore Section <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="topic-card" onclick="openModal('dataAnalysisModal')">
+                    <div class="card-header">
+                        <h3>Data Analysis & Tools</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Data Validation</li>
+                            <li><i class="fas fa-check-circle"></i> Conditional Formatting</li>
+                            <li><i class="fas fa-check-circle"></i> Charts and Data Visualization</li>
+                            <li><i class="fas fa-check-circle"></i> PivotTables</li>
+                            <li><i class="fas fa-check-circle"></i> What-If Analysis</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Explore Section <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="examples-section">
+        <div class="container">
+            <h2 class="section-title">Function Examples</h2>
+            
+            <div class="example">
+                <h3><i class="fas fa-calculator"></i> VLOOKUP Function</h3>
+                <div class="example-content">
+                    <div class="example-explanation">
+                        <p><strong>Explanation:</strong> VLOOKUP is used to search for a value in the first column of a range and return a value in the same row from a specified column.</p>
+                        <p><strong>Syntax:</strong> =VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])</p>
+                        <p><strong>Usage:</strong> Perfect for finding specific information in large datasets, such as looking up an employee's department based on their ID.</p>
+                    </div>
+                    <div class="example-code">
+                        <p><strong>Example:</strong></p>
+                        <p>=VLOOKUP("A23", A2:D100, 3, FALSE)</p>
+                        <p>This formula looks for "A23" in the first column of range A2:D100 and returns the value from the third column of the matching row.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example">
+                <h3><i class="fas fa-project-diagram"></i> IF Function</h3>
+                <div class="example-content">
+                    <div class="example-explanation">
+                        <p><strong>Explanation:</strong> The IF function performs a logical test and returns one value for a TRUE result, and another for a FALSE result.</p>
+                        <p><strong>Syntax:</strong> =IF(logical_test, value_if_true, [value_if_false])</p>
+                        <p><strong>Usage:</strong> Commonly used for conditional calculations, flagging data that meets certain criteria, or creating conditional formatting rules.</p>
+                    </div>
+                    <div class="example-code">
+                        <p><strong>Example:</strong></p>
+                        <p>=IF(B2 > 75, "Pass", "Fail")</p>
+                        <p>This formula checks if the value in cell B2 is greater than 75. If true, it returns "Pass"; otherwise, it returns "Fail".</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example">
+                <h3><i class="fas fa-chart-line"></i> SUMIFS Function</h3>
+                <div class="example-content">
+                    <div class="example-explanation">
+                        <p><strong>Explanation:</strong> SUMIFS adds all numbers in a range of cells based on multiple criteria.</p>
+                        <p><strong>Syntax:</strong> =SUMIFS(sum_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)</p>
+                        <p><strong>Usage:</strong> Ideal for summing values that meet multiple conditions, such as total sales in a specific region during a certain time period.</p>
+                    </div>
+                    <div class="example-code">
+                        <p><strong>Example:</strong></p>
+                        <p>=SUMIFS(C2:C100, A2:A100, "West", B2:B100, ">1000")</p>
+                        <p>This formula sums all values in range C2:C100 where the corresponding cell in column A is "West" and the value in column B is greater than 1000.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal for Introduction -->
+    <div id="introModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('introModal')">&times;</span>
+            <div class="modal-header">
+                <h2>Introduction to Excel</h2>
+            </div>
+            <h3>What is Microsoft Excel?</h3>
+            <p>Microsoft Excel is a powerful spreadsheet application that is part of the Microsoft Office suite. It is used for organizing, analyzing, and storing data in tabular form.</p>
+            
+            <h3>Key Components of Excel:</h3>
+            <ul>
+                <li><strong>Workbook:</strong> An Excel file that contains one or more worksheets</li>
+                <li><strong>Worksheet:</strong> A single page in a workbook made up of rows and columns</li>
+                <li><strong>Cell:</strong> The intersection of a row and column where data is entered</li>
+                <li><strong>Formula Bar:</strong> Where you can view and edit formulas</li>
+                <li><strong>Ribbon:</strong> The toolbar at the top containing Excel commands</li>
+            </ul>
+            
+            <h3>Basic Arithmetic Operations:</h3>
+            <div class="example-code">
+                <p>=A1+B1  // Addition</p>
+                <p>=A1-B1  // Subtraction</p>
+                <p>=A1*B1  // Multiplication</p>
+                <p>=A1/B1  // Division</p>
+                <p>=A1^B1  // Exponentiation</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for Basic Functions -->
+    <div id="basicFunctionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('basicFunctionsModal')">&times;</span>
+            <div class="modal-header">
+                <h2>Basic Excel Functions</h2>
+            </div>
+            <h3>SUM Function</h3>
+            <p><strong>Syntax:</strong> =SUM(number1, [number2], ...)</p>
+            <p><strong>Description:</strong> Adds all the numbers in a range of cells.</p>
+            <div class="example-code">
+                <p>=SUM(A1:A5)  // Adds values in cells A1 through A5</p>
+                <p>=SUM(5, 10, 15)  // Returns 30</p>
+            </div>
+            
+            <h3>AVERAGE Function</h3>
+            <p><strong>Syntax:</strong> =AVERAGE(number1, [number2], ...)</p>
+            <p><strong>Description:</strong> Returns the average (arithmetic mean) of the arguments.</p>
+            <div class="example-code">
+                <p>=AVERAGE(B2:B10)  // Average of values in B2 through B10</p>
+            </div>
+            
+            <h3>IF Function</h3>
+            <p><strong>Syntax:</strong> =IF(logical_test, value_if_true, [value_if_false])</p>
+            <p><strong>Description:</strong> Returns one value if a condition is true and another value if it's false.</p>
+            <div class="example-code">
+                <p>=IF(A1>50, "Pass", "Fail")  // Returns "Pass" if A1 is greater than 50, otherwise "Fail"</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Additional modals would be added here for other sections -->
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Excel Mastery</h3>
+                    <p>Comprehensive Excel learning resource with detailed explanations and examples for all functions and features.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Basic Functions</a></li>
+                        <li><a href="#">Advanced Functions</a></li>
+                        <li><a href="#">Data Analysis</a></li>
+                        <li><a href="#">Charts & Visualization</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> contact@excelmastery.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Excel Mastery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to open modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+        
+        // Function to close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            let modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
