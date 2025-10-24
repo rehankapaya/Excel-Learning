@@ -10,6 +10,17 @@ import TopicAirthmeticOperations from "./sections/section1/TopicAirthmeticOperat
 import TopicBooleanOperations from './sections/section1/TopicBooleanOperations';
 import TopicSumAverageMaxMin from "./sections/section2/TopicSumAverageMaxMin";
 import TopicCountCountaCountBlank from "./sections/section2/TopicCountCountaCountBlank";
+import TopicLowerUpperProper from "./sections/section2/TopicLowerUpperProper";
+import TopicIfNestedIf from "./sections/section2/TopicIfNestedif";
+import TopicCountifSumifAverageif from "./sections/section2/TopicCountif,Sumif,Averageif";
+import TopicConcatTextjoin from "./sections/section3/TopicConcatTextjoin";
+import TopicLargeSmall from "./sections/section3/TopicLargeSmall";
+import TopicRandRandbetween from "./sections/section3/TopicRandRandbetween";
+import TopicAndOrLogicalFunctions from "./sections/section3/TopicAndOrLogicalFunctions";
+import TopicVlookupHlookup from "./sections/section4/TopicVlookupAndHlookup";
+import TopicIndexMatch from "./sections/section4/TopicIndexMatch";
+import TopicForecastFutureValue from "./sections/section4/TopicForecastFutureValue";
+import TopicCountifsSumifs from "./sections/section4/TopicCountIfsSumIfs";
 export default function SectionPage() {
   const { id } = useParams();
   const [selectedTopic, setSelectedTopic] = useState(null);
@@ -78,15 +89,21 @@ export default function SectionPage() {
     "Boolean Operations": <TopicBooleanOperations />,
     "SUM, AVERAGE, MAX, MIN": <TopicSumAverageMaxMin />,
     "COUNT, COUNTA, COUNTBLANK": <TopicCountCountaCountBlank />,
-    "LOWER, UPPER, PROPER": <div>Content for LOWER, UPPER, PROPER coming soon...</div>,
-    "IF, NESTED IF": <div>Content for IF, NESTED IF coming soon...</div>,
-    "COUNTIF, SUMIF, AVERAGEIF": <div>Content for COUNTIF, SUMIF, AVERAGEIF coming soon...</div>,
-    "CONCAT, TEXTJOIN": <div>Content for CONCAT, TEXTJOIN coming soon...</div>,
-    "LARGE, SMALL": <div>Content for LARGE, SMALL coming soon...</div>,
-    "RAND, RANDBETWEEN": <div>Content for RAND, RAN DBETWEEN coming soon...</div>,
-    "AND, OR logical functions": <div>Content for AND, OR logical functions coming soon...</div>,
-    "VLOOKUP and HLOOKUP": <div>Content for VLOOKUP and HLOOKUP coming soon...</div>,
-    "INDEX, MATCH": <div>Content for INDEX, MATCH coming soon...</div>, 
+    "LOWER, UPPER, PROPER": <TopicLowerUpperProper/>,
+    "IF, NESTED IF": <TopicIfNestedIf/>,
+    "COUNTIF, SUMIF, AVERAGEIF": <TopicCountifSumifAverageif/>,
+    "CONCAT, TEXTJOIN": <TopicConcatTextjoin/>,
+    "LARGE, SMALL": <TopicLargeSmall/>,
+    "RAND, RANDBETWEEN": <TopicRandRandbetween/>,
+    "AND, OR logical functions": <TopicAndOrLogicalFunctions/>,
+    "VLOOKUP and HLOOKUP": <TopicVlookupHlookup/>,
+    "INDEX, MATCH": <TopicIndexMatch/>,
+    "FORECAST, FUTURE VALUE": <TopicForecastFutureValue/>, 
+    "COUNTIFS, SUMIFS": <TopicCountifsSumifs/>, 
+    "IFS function": <div>Content for INDEX, MATCH coming soon...</div>, 
+    "MAXIFS, MINIFS": <div>Content for INDEX, MATCH coming soon...</div>, 
+    "IFERROR": <div>Content for INDEX, MATCH coming soon...</div>, 
+    "SUMPRODUCT": <div>Content for INDEX, MATCH coming soon...</div>, 
   };
 
   if (!section) {
