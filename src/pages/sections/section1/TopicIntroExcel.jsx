@@ -105,7 +105,7 @@ export default function TopicIntroExcel() {
           <code>=B2*C2</code> are applied to calculate totals automatically.
         </p>
         <a
-          href="/excel_practice_example.xlsx"
+          href="/Introduction_to_MSOffice_and_MS_Excel.xlsx"
           download
           className="inline-block bg-[#217346] text-white px-5 py-2 rounded shadow hover:bg-[#1a5d36] transition"
         >

@@ -21,6 +21,15 @@ import TopicVlookupHlookup from "./sections/section4/TopicVlookupAndHlookup";
 import TopicIndexMatch from "./sections/section4/TopicIndexMatch";
 import TopicForecastFutureValue from "./sections/section4/TopicForecastFutureValue";
 import TopicCountifsSumifs from "./sections/section4/TopicCountIfsSumIfs";
+import TopicIfError from "./sections/section5/TopicIfError";
+import TopicMaxIfsMinIfs from "./sections/section5/TopicMaxIfsMinIfs";
+import TopicSumProduct from "./sections/section5/TopicSumProduct";
+import TopicDataValidation from "./sections/section6/TopicDataValidation";
+import TopicConditionalFormatting from "./sections/section6/TopicConditionalFormatting";
+import TopicChartsAndDataVisualization from "./sections/section6/TopicChartsAndDataVisualization";
+import TopicPivotTables from "./sections/section6/TopicPivotTables";
+import TopicWhatIfAnalysis from "./sections/section6/TopicWhatIfAnalysis";
+import TopicIfsFunction from "./sections/section5/TopicIfsFunction";
 export default function SectionPage() {
   const { id } = useParams();
   const [selectedTopic, setSelectedTopic] = useState(null);
@@ -65,7 +74,12 @@ export default function SectionPage() {
     },
     adv2: {
       title: "Advanced Functions (Cont.)",
-      topics: ["IFS function", "MAXIFS, MINIFS", "IFERROR", "SUMPRODUCT"],
+      topics: [
+        "IFS function",
+        "MAXIFS, MINIFS",
+        "IFERROR",
+        "SUMPRODUCT"
+      ],
     },
     data: {
       title: "Data Analysis & Tools",
@@ -87,23 +101,33 @@ export default function SectionPage() {
     "Creating and formatting table": <TopicCreateTable />,
     "Arithmetic Operations": <TopicAirthmeticOperations />,
     "Boolean Operations": <TopicBooleanOperations />,
+    
     "SUM, AVERAGE, MAX, MIN": <TopicSumAverageMaxMin />,
     "COUNT, COUNTA, COUNTBLANK": <TopicCountCountaCountBlank />,
-    "LOWER, UPPER, PROPER": <TopicLowerUpperProper/>,
-    "IF, NESTED IF": <TopicIfNestedIf/>,
-    "COUNTIF, SUMIF, AVERAGEIF": <TopicCountifSumifAverageif/>,
-    "CONCAT, TEXTJOIN": <TopicConcatTextjoin/>,
-    "LARGE, SMALL": <TopicLargeSmall/>,
-    "RAND, RANDBETWEEN": <TopicRandRandbetween/>,
-    "AND, OR logical functions": <TopicAndOrLogicalFunctions/>,
-    "VLOOKUP and HLOOKUP": <TopicVlookupHlookup/>,
-    "INDEX, MATCH": <TopicIndexMatch/>,
-    "FORECAST, FUTURE VALUE": <TopicForecastFutureValue/>, 
-    "COUNTIFS, SUMIFS": <TopicCountifsSumifs/>, 
-    "IFS function": <div>Content for INDEX, MATCH coming soon...</div>, 
-    "MAXIFS, MINIFS": <div>Content for INDEX, MATCH coming soon...</div>, 
-    "IFERROR": <div>Content for INDEX, MATCH coming soon...</div>, 
-    "SUMPRODUCT": <div>Content for INDEX, MATCH coming soon...</div>, 
+    "LOWER, UPPER, PROPER": <TopicLowerUpperProper />,
+    "IF, NESTED IF": <TopicIfNestedIf />,
+    "COUNTIF, SUMIF, AVERAGEIF": <TopicCountifSumifAverageif />,
+    
+    "CONCAT, TEXTJOIN": <TopicConcatTextjoin />,
+    "LARGE, SMALL": <TopicLargeSmall />,
+    "RAND, RANDBETWEEN": <TopicRandRandbetween />,
+    "AND, OR logical functions": <TopicAndOrLogicalFunctions />,
+    
+    "VLOOKUP and HLOOKUP": <TopicVlookupHlookup />,
+    "INDEX, MATCH": <TopicIndexMatch />,
+    "FORECAST, FUTURE VALUE": <TopicForecastFutureValue />,
+    "COUNTIFS, SUMIFS": <TopicCountifsSumifs />,
+
+    "IFS function": <TopicIfsFunction />,
+    "MAXIFS, MINIFS": <TopicMaxIfsMinIfs />,
+    "IFERROR": <TopicIfError />,
+    "SUMPRODUCT": <TopicSumProduct />,
+    
+    "Data Validation":<TopicDataValidation/>,
+    "Conditional Formatting":<TopicConditionalFormatting/>,
+    "Charts and Data Visualization":<TopicChartsAndDataVisualization/>,
+    "PivotTables":<TopicPivotTables/>,
+    "What-If Analysis":<TopicWhatIfAnalysis/>,
   };
 
   if (!section) {
@@ -125,11 +149,10 @@ export default function SectionPage() {
               <li key={idx}>
                 <button
                   onClick={() => setSelectedTopic(t)}
-                  className={`block w-full text-left px-3 py-2 rounded-md transition ${
-                    selectedTopic === t
-                      ? "bg-[#217346] text-white"
-                      : "text-blue-600 hover:bg-gray-100"
-                  }`}
+                  className={`block w-full text-left px-3 py-2 rounded-md transition ${selectedTopic === t
+                    ? "bg-[#217346] text-white"
+                    : "text-blue-600 hover:bg-gray-100"
+                    }`}
                 >
                   {t}
                 </button>
